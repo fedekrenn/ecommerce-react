@@ -1,8 +1,14 @@
 #root .MuiAppBar-root {
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo-bike-store{
     width: 150px;
+}
+
+.header__child{
+    display: flex;
+    align-items: center;
 }
