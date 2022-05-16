@@ -1,0 +1,13 @@
+.itemList{
+    width: 30%;
+    min-width: 250px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+}
+
+.itemList img{
+    min-height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
