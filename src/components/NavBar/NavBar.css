@@ -1,11 +1,8 @@
-h1{
-    display: inline;
-    margin: 20px;
-}
-
 .App .MuiAppBar-root {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    min-height: 10vh;
+}
+
+.logo-bike-store{
+    width: 150px;
 }

@@ -9,8 +9,8 @@ export default function ButtonAppBar() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
+                <img src="./assets/icons/icono-bike-store.svg" alt="Logo de Bike Store" class="logo-bike-store"></img>
                 <MenuNavegable />
-                <h1>Bike store - Tienda de Ciclismo</h1>
             </AppBar>
         </Box>
     );
