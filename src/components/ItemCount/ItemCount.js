@@ -9,7 +9,7 @@ const ItemCount = (prop) =>{
 
     const [count, setCount] = useState(1);
 
-    const addItem = _ => {
+    const addItem = () => {
         if (count < stockNum) {
             setCount(count + 1)
         } else {
@@ -22,13 +22,13 @@ const ItemCount = (prop) =>{
         }
     }
 
-    const removeItem = _ => {
+    const removeItem = () => {
         if (count > 1) {
             setCount(count - 1)
         }
     }
 
-    const confirm = _ =>{
+    const confirm = () =>{
         Swal.fire({
             title: 'Agregado!',
             text: 'El producto se agregó correctamente',
