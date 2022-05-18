@@ -26,3 +26,8 @@ h1{
   font-size: 3em;
   color: #095fb4;
 }
+
+h2{
+  text-align: center;
+  margin: 20px 0;
+}

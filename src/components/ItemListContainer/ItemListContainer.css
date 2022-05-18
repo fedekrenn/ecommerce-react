@@ -1,3 +1,7 @@
+section{
+    margin: 60px 0;
+}
+
 .item-list__container{
     display: flex;
     flex-wrap: wrap;

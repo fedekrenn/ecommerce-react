@@ -2,13 +2,13 @@ import './ItemList.css'
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemList = (prop) => {
-    const {greeting, img, price, stock} = prop;
+    const {productName, img, price, stock} = prop;
     return (
         <div className='item-list'>
-            <img alt={`Bicicleta ${greeting}`} src={`./assets/images/${img}`}></img>
-            <h3>{greeting}</h3>
+            <img alt={`Bicicleta ${productName}`} src={`./assets/images/${img}`}></img>
+            <h3>{productName}</h3>
             <p>${price}</p>
-            <ItemCount stockNum={stock}/>
+            <ItemCount stock={stock}/>
         </div>
     )
 }

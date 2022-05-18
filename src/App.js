@@ -8,7 +8,7 @@ function App() {
       <NavBar />
       <main>
         <h1>Bike Store - Tienda de ciclismo</h1>
-        <ItemListContainer />
+        <ItemListContainer greeting={'Productos Recomendados'}/>
       </main>
     </>
   );

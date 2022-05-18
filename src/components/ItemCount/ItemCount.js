@@ -3,19 +3,17 @@ import Button from '@mui/material/Button';
 import Swal from 'sweetalert2';
 import { useState } from "react";
 
-const ItemCount = (prop) =>{
-
-    const {stockNum} = prop;
+const ItemCount = ({stock}) =>{
 
     const [count, setCount] = useState(1);
 
     const addItem = () => {
-        if (count < stockNum) {
+        if (count < stock) {
             setCount(count + 1)
         } else {
             Swal.fire({
                 title: 'Alerta de stock!',
-                text: `Por el momento solo contamos con ${stockNum} unidades en stock, por lo que no es posible agregar más`,
+                text: `Por el momento solo contamos con ${stock} unidades en stock, por lo que no es posible agregar más`,
                 icon: 'error',
                 confirmButtonText: 'Intentar nuevamente'
               })
@@ -40,9 +38,9 @@ const ItemCount = (prop) =>{
     return(
         <>
             <div className='item-list__counter'>
-                <Button onClick={removeItem}>-</Button>
+                <Button className='btn-counter' onClick={removeItem}>-</Button>
                 <p>{count}</p>
-                <Button onClick={addItem}>+</Button>
+                <Button className='btn-counter' onClick={addItem}>+</Button>
             </div>
             <Button className='btn' variant="outlined" onClick={confirm}>Agregar al carrito</Button>
         </>
