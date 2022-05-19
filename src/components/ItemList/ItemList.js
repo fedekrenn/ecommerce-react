@@ -8,7 +8,7 @@ const ItemList = (prop) => {
             <img alt={`Bicicleta ${productName}`} src={`./assets/images/${img}`}></img>
             <h3>{productName}</h3>
             <p>${price}</p>
-            <ItemCount stock={stock}/>
+            <ItemCount stock={stock} initial={1}/>
         </div>
     )
 }
