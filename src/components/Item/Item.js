@@ -1,12 +1,12 @@
 import './Item.css';
 import ItemCount from '../ItemCount/ItemCount';
 
-const Item = (prop) => {
-    const {productName, img, price, stock} = prop;
+const Item = ({item}) => {
+    const {title, price, pictureUrl, stock} = item;
     return (
         <div className='item-list'>
-            <img alt={`Bicicleta ${productName}`} src={`./assets/images/${img}`}></img>
-            <h3>{productName}</h3>
+            <img alt={`Bicicleta ${title}`} src={`./assets/images/${pictureUrl}`}></img>
+            <h3>{title}</h3>
             <p>${price}</p>
             <ItemCount stock={stock} initial={1}/>
         </div>

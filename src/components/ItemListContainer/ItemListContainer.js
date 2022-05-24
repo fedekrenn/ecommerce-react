@@ -48,7 +48,7 @@ const ItemListContainer = ({ greeting }) => {
                 setProducts(res)
             })
             .catch((rej) => {
-                alert(rej)
+                console.log(rej)
             })
 
     }, [])
@@ -58,7 +58,7 @@ const ItemListContainer = ({ greeting }) => {
         <section>
             <h2>{greeting}</h2>
             <div className="item-list__container">
-                <ItemList bikes={products} />
+                <ItemList items={products} />
             </div>
         </section>
     );
