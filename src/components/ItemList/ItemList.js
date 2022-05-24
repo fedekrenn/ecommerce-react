@@ -1,15 +1,20 @@
 import './ItemList.css'
-import ItemCount from '../ItemCount/ItemCount';
+import Item from '../Item/Item';
 
-const ItemList = (prop) => {
-    const {productName, img, price, stock} = prop;
+
+const ItemList = ({bikes}) => {
+    
     return (
-        <div className='item-list'>
-            <img alt={`Bicicleta ${productName}`} src={`./assets/images/${img}`}></img>
-            <h3>{productName}</h3>
-            <p>${price}</p>
-            <ItemCount stock={stock} initial={1}/>
-        </div>
+        <>
+            {
+                bikes.map((bike, index) =>{
+                    const {title, price, pictureUrl, stock} = bike
+                    return (
+                        <Item productName={title} price={price} img={pictureUrl} stock={stock} key={index}/>
+                    )
+                })
+            }
+        </>
     )
 }
 
