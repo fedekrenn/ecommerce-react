@@ -31,7 +31,11 @@ const producto = {
     description: "lorem impsum",
     price: 67000,
     pictureUrl: "venzo-frida.jpg",
-    stock: 4
+    stock: 4,
+    pic1: "frida-detail-1.jpg",
+    pic2: "frida-detail-2.jpg",
+    pic3: "frida-detail-3.jpg",
+    pic4: "frida-detail-4.jpg"
 }
 
 

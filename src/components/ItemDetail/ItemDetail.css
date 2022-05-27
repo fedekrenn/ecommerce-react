@@ -1,4 +1,66 @@
-.prueba{
-    min-height: 100vh;
-    text-align: center;
+
+.container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 1% 1%;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "pic1 primary-pic title"
+        "pic2 primary-pic price"
+        "pic3 primary-pic detail"
+        "pic4 primary-pic buy";
+    width: 90%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.primary-pic {
+    grid-area: primary-pic;
+    object-fit: cover;
+    border: 1px solid black;
+    margin: auto;
+
+}
+
+.pic1, .pic2, .pic3, .pic4{
+    width: 70%;
+    margin: auto;
+}
+
+.pic1 {
+    grid-area: pic1;
+}
+
+.pic2 {
+    grid-area: pic2;
+}
+
+.pic3 {
+    grid-area: pic3;
+}
+
+.pic4 {
+    grid-area: pic4;
+}
+
+.title {
+    grid-area: title;
+}
+
+.price {
+    grid-area: price;
+}
+
+.detail {
+    grid-area: detail;
+}
+
+.buy {
+    justify-self: center;
+    align-self: center;
+    grid-area: buy;
 }
