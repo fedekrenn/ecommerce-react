@@ -1,37 +1,12 @@
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList';
 import { useState, useEffect } from 'react';
+import bikes from '../../utils/bikesMocks';
+
 
 const ItemListContainer = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
-
-    const bikes = [
-        {
-            id: 1,
-            title: "Venzo Frida",
-            description: "lorem impsum",
-            price: 67000,
-            pictureUrl: "venzo-frida.jpg",
-            stock: 4
-        },
-        {
-            id: 2,
-            title: "Trinx Gravel",
-            description: "lorem impsum",
-            price: 185000,
-            pictureUrl: "trinx-gravel.jpg",
-            stock: 2
-        },
-        {
-            id: 3,
-            title: "Raleigh M2.0",
-            description: "lorem impsum",
-            price: 82300,
-            pictureUrl: "raleigh.jpg",
-            stock: 9
-        }
-    ];
 
     const getProducts = () => {
         return new Promise((res, rej) => {
@@ -51,6 +26,7 @@ const ItemListContainer = ({ greeting }) => {
                 console.log(rej)
             })
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 
