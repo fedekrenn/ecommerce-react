@@ -29,12 +29,9 @@ const ItemDetailContainer = () => {
     }, [])
 
 
-
-
     return (
         <>
-            <h2>Hola</h2>
-            <ItemDetail prop={item}/>
+            {Object.keys(item).length === 0 ? <h2>Cargando detalle producto...</h2> : <ItemDetail prop={item} />}
         </>
     )
 }
