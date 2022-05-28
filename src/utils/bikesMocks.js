@@ -35,7 +35,8 @@ const producto = {
     pic1: "frida-detail-1.jpg",
     pic2: "frida-detail-2.jpg",
     pic3: "frida-detail-3.jpg",
-    pic4: "frida-detail-4.jpg"
+    pic4: "frida-detail-4.jpg",
+    sizes: ["15'", "18'", "20'", "22'"]
 }
 
 
