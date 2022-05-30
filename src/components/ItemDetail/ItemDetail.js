@@ -2,6 +2,7 @@ import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import Carousel from 'react-bootstrap/Carousel'
 
 const ItemDetail = ({ prop }) => {
 

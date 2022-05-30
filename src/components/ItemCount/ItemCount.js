@@ -3,9 +3,7 @@ import Button from '@mui/material/Button';
 import Swal from 'sweetalert2';
 import { useState } from "react";
 
-const ItemCount = (props) => {
-
-    const { stock, initial } = props;
+const ItemCount = ({stock, initial, onAdd}) => {
 
     const [count, setCount] = useState(initial);
 
@@ -23,18 +21,9 @@ const ItemCount = (props) => {
     }
 
     const removeItem = () => {
-        if (count > 1) {
+        if (count > initial) {
             setCount(count - 1)
         }
-    }
-
-    const onAdd = () => {
-        Swal.fire({
-            title: 'Agregado!',
-            text: `Se agregaron ${count} productos correctamente`,
-            icon: 'success',
-            confirmButtonText: 'Seguir comprando'
-        })
     }
 
     return (
@@ -44,7 +33,7 @@ const ItemCount = (props) => {
                 <p>{count}</p>
                 <Button className='btn-counter' onClick={addItem}>+</Button>
             </div>
-            <Button className='btn' variant="outlined" onClick={onAdd}>Agregar al carrito</Button>
+            <Button className='btn' variant="outlined" onClick={() => onAdd(count)}>Agregar al carrito</Button>
         </>
     )
 }
