@@ -1,19 +1,10 @@
 import './Item.css';
 import ItemCount from '../ItemCount/ItemCount';
-import Swal from 'sweetalert2';
+import onAdd from '../../functions/onAdd';
 
 const Item = ({item}) => {
 
     const {title, price, pictureUrl, stock} = item;
-
-    const onAdd = (count) => {
-        Swal.fire({
-            title: 'Agregado!',
-            text: `Se agregaron ${count} productos correctamente`,
-            icon: 'success',
-            confirmButtonText: 'Seguir comprando'
-        })
-    }
 
     return (
         <div className='item-list'>
