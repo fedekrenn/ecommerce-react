@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import MenuNavegable from '../MenuNavegable/MenuNavegable'
+import NavigableMenu from '../NavigableMenu/NavigableMenu'
 import CartWidget from '../CartWidget/CartWidget'
 
 import './NavBar.css'
@@ -11,8 +12,8 @@ export default function ButtonAppBar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <div className='header__child'>
-                    <img src="./assets/icons/icono-bike-store.svg" alt="Logo de Bike Store" className="logo-bike-store"></img>
-                    <MenuNavegable />
+                    <Link to={"/"}><img src="./assets/icons/icono-bike-store.svg" alt="Logo de Bike Store" className="logo-bike-store"></img></Link>
+                    <NavigableMenu />
                 </div>
                 <CartWidget />
             </AppBar>

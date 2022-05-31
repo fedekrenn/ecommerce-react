@@ -1,16 +1,20 @@
 import './ItemDetailContainer.css';
 import { useState, useEffect } from 'react';
-import { producto } from '../../utils/bikesMocks';
+import bikes from '../../utils/bikesMocks';
+import { useParams , useNavigate } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState({})
+    const navigate = useNavigate()
 
+    const { id } = useParams()
+    
     const getItem = () => {
         return new Promise((res, rej) => {
             setTimeout(() => {
-                res(producto)
+                res(productFilter)
             }, 2000)
         })
     };
@@ -19,7 +23,11 @@ const ItemDetailContainer = () => {
 
         getItem()
             .then((res) => {
-                setItem(res)
+                if(res === undefined){
+                    navigate('/*')
+                }else {
+                    setItem(productFilter)
+                }
             })
             .catch((rej) => {
                 console.log(rej)
@@ -28,6 +36,10 @@ const ItemDetailContainer = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+
+    const productFilter = bikes.find( (product) => {
+        return product.id == id
+    })
 
     return (
         <>

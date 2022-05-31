@@ -1,0 +1,15 @@
+ul.nav__ul{
+    display: flex;
+}
+
+ul li{
+    list-style-type: none;
+    margin: 10px;
+}
+
+.header__child .nav-btn{
+    color: white;
+    font-family: inherit;
+    text-transform: none;
+    font-size: inherit;
+}
