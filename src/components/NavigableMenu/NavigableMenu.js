@@ -25,7 +25,7 @@ const NavigableMenu = () => {
         <nav>
             <ul className='nav__ul'>
                 <li>
-                    <Link to={"/item"}>
+                    <Link to={"/"}>
                         <Button variant="text" className='nav-btn'>Home</Button>
                     </Link>
                 </li>

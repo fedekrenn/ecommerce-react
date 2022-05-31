@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Swal from 'sweetalert2';
 import { useState } from "react";
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [count, setCount] = useState(initial);
 

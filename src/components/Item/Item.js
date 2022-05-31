@@ -6,11 +6,11 @@ import { Button } from '@mui/material';
 
 const Item = ({item}) => {
 
-    const {title, price, pictureUrl, stock, id} = item;
+    const {title, price, pic1, stock, id} = item;
 
     return (
             <div className='item-list'>
-            <img alt={`Bicicleta ${title}`} src={`./assets/images/${pictureUrl}`}></img>
+            <img alt={`Bicicleta ${title}`} src={`./assets/images/${pic1}`}></img>
             <h3>{title}</h3>
             <p>${price}</p>
             <Button variant="contained">
