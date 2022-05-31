@@ -5,15 +5,7 @@ import Item from '../Item/Item';
 const ItemList = ({items}) => {
     
     return (
-        <>
-            {
-                items.map((bike, index) =>{
-                    return (
-                        <Item item={bike} key={index}/>
-                    )
-                })
-            }
-        </>
+        <>{ items.map((bike, index) => <Item item={bike} key={index}/>) }</>
     )
 }
 

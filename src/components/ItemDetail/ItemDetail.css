@@ -23,7 +23,7 @@
     grid-area: primary-pic;
     object-fit: cover;
     margin: auto;
-
+    width: 500px;
 }
 
 .pic-detail{
@@ -56,12 +56,17 @@
     grid-area: pic4;
 }
 
-.title {
+
+.container > .title {
     justify-self: center;
     align-self: center;
     grid-area: title;
-    font-size: 3em;
+    font-size: 3em ;
     height: fit-content;
+}
+
+.title h3{
+    font-size: 1em;
 }
 
 .price {
@@ -92,7 +97,7 @@
 }
 
 .buy button{
-    width: 50%;
+    width: 70%;
 }
 
 .buy .item-list__counter{

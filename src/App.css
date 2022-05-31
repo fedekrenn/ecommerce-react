@@ -12,15 +12,22 @@ a{
   color: inherit;
 }
 
+/* Se resetean unos parámetros por defecto de bootstrap */
+p, h1, h2, h3, h4, h5, ul{
+  margin-bottom: inherit;
+  padding-left: inherit;
+}
+
 img{
   max-width: 100%;
 }
 
-h1, h2, h3, h4{
+main h1, main h2, main h3, main h4{
   font-family: 'EB Garamond', serif;
+  font-weight: bold;
 }
 
-h1{
+main h1{
   text-align: center;
   margin: 5% 0;
   font-size: 3em;

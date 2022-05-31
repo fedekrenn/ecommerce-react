@@ -4,7 +4,7 @@ const bikes = [
         title: "Venzo Frida",
         description: "lorem impsum",
         price: 67000,
-        pictureUrl: "venzo-frida.jpg",
+        pictureUrl: "venzo-frida-1.jpg",
         stock: 4
     },
     {
@@ -30,12 +30,11 @@ const producto = {
     title: "Venzo Frida",
     description: "lorem impsum",
     price: 67000,
-    pictureUrl: "venzo-frida.jpg",
+    pictureUrl: "venzo-frida-1.jpg",
     stock: 4,
-    pic1: "frida-detail-1.jpg",
-    pic2: "frida-detail-2.jpg",
-    pic3: "frida-detail-3.jpg",
-    pic4: "frida-detail-4.jpg",
+    pic1: "venzo-frida-2.jpg",
+    pic2: "venzo-frida-3.jpg",
+    pic3: "venzo-frida-4.jpg",
     sizes: ["15'", "18'", "20'", "22'"]
 }
 
