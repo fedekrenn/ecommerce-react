@@ -33,6 +33,11 @@ const ItemListContainer = ({ greeting }) => {
                 console.log(rej)
             })
 
+            return(() =>{
+                setLoading(true);
+                setProducts([])
+            })
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category])
 

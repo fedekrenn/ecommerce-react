@@ -88,6 +88,12 @@
     font-weight: bold;
 }
 
+.detail__description{
+    font-weight: bold;
+    font-size: .8em;
+    margin: 25px 0;
+}
+
 .buy {
     grid-area: buy;
     display: flex;

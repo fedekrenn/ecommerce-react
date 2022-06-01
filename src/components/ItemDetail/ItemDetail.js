@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const ItemDetail = ({ prop }) => {
 
-    const { title, price, stock, pic1, pic2, pic3, pic4 , sizes } = prop;
+    const { title, price, stock, pic1, pic2, pic3, pic4 , sizes, description } = prop;
 
     const [bike, setBike] = useState(pic1)
 
@@ -44,6 +44,7 @@ const ItemDetail = ({ prop }) => {
             <div className="detail">
                 <p>Llega gratis en 5 días</p>
                 <p>Abonalo en <span>12 cuotas sin interés</span> de ${parseInt(price / 12)}</p>
+                <p className='detail__description'>{description}</p>
                 <Autocomplete
                     disablePortal
                     className='autocomplete'

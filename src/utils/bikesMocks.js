@@ -2,7 +2,7 @@ const bikes = [
     {
         id: 1,
         title: "Venzo Frida",
-        description: "lorem impsum",
+        description: "Para iniciarse en el mundo del mtb, la Frida Belle es una bicicleta con estilo, ligera y versátil con un diseño pensado para hacer de los viajes un verdadero placer.",
         price: 67000,
         stock: 4,
         category: "mtb",
@@ -15,7 +15,7 @@ const bikes = [
     {
         id: 2,
         title: "Trinx Gravel",
-        description: "lorem impsum",
+        description: "Versatilidad, diversión y confort. Saltá al gravel y que no te frene ningún circuito de velocidad y agilidad. Ideales para rodar tanto en asfalto como pistas de tierra, con o sin grava, incluso para circular por senderos técnicos.",
         price: 185000,
         stock: 2,
         category: "rutera",
@@ -28,7 +28,7 @@ const bikes = [
     {
         id: 3,
         title: "Raleigh M2.0",
-        description: "lorem impsum",
+        description: "Tanto los aficionados al ciclismo como quienes lo practican como deporte y buscan mejorar su salud, encuentran en las bicis Raleigh un producto confiable que cumple con todas sus necesidades.",
         price: 82300,
         stock: 9,
         category: "mtb",
@@ -41,7 +41,7 @@ const bikes = [
     {
         id: 4,
         title: "Venzo Phoenix",
-        description: "lorem impsum",
+        description: "El resultado de planificación, creación y testeo. La Venzo Phoenix llega para revolucionar el concepto de ruta y que lo puedas drisfrutar exigiéndote al máximo.",
         price: 142000,
         stock: 5,
         category: "rutera",
