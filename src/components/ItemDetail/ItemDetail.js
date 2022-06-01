@@ -1,15 +1,24 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount';
 import TextField from '@mui/material/TextField';
+import Swal from 'sweetalert2';
 import Autocomplete from '@mui/material/Autocomplete';
-import onAdd from '../../functions/onAdd';
 import { useState } from 'react';
 
 const ItemDetail = ({ prop }) => {
 
-    const { title, price, stock, pic1, pic2, pic3, pic4 ,sizes } = prop;
+    const { title, price, stock, pic1, pic2, pic3, pic4 , sizes } = prop;
 
     const [bike, setBike] = useState(pic1)
+
+    const onAdd = (count) => {
+        Swal.fire({
+            title: 'Agregado!',
+            text: `Se agregaron ${count} productos correctamente`,
+            icon: 'success',
+            confirmButtonText: 'Seguir comprando'
+        })
+    }
 
     // Función para seleccionar la imagen principal en el grid
     const selectBike = (img) => {

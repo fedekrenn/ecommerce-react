@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import bikes from '../../utils/bikesMocks';
 import { useParams , useNavigate } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import SpinnerLoader from '../SpinnerLoader/SpinnerLoader';
 
 const ItemDetailContainer = () => {
 
@@ -26,7 +27,7 @@ const ItemDetailContainer = () => {
                 if(res === undefined){
                     navigate('/*')
                 }else {
-                    setItem(productFilter)
+                    setItem(res)
                 }
             })
             .catch((rej) => {
@@ -38,12 +39,12 @@ const ItemDetailContainer = () => {
 
 
     const productFilter = bikes.find( (product) => {
-        return product.id == id
+        return product.id === parseInt(id)
     })
 
     return (
         <>
-            {Object.keys(item).length === 0 ? <h2>Cargando detalle producto...</h2> : <ItemDetail prop={item} />}
+            {Object.keys(item).length === 0 ? <SpinnerLoader/> : <ItemDetail prop={item} />}
         </>
     )
 }

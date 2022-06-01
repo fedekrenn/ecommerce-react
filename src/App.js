@@ -13,6 +13,7 @@ function App() {
         <h1>Bike Store - Tienda de ciclismo</h1>
         <Routes>
           <Route path='/' element={<ItemListContainer greeting={'Productos Recomendados'} />}/>
+          <Route path='/category/:category' element={<ItemListContainer />}/>
           <Route path='/item/:id' element={<ItemDetailContainer />}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>

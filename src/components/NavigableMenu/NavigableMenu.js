@@ -11,7 +11,7 @@ const NavigableMenu = () => {
 
     const open = Boolean(anchorEl);
 
-    const categories = ["Mtb", "Rutera"]
+    const categories = ["mtb", "rutera"]
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -50,7 +50,16 @@ const NavigableMenu = () => {
                             'aria-labelledby': 'basic-button',
                         }}>
 
-                        {categories.map((cat, i) => <MenuItem onClick={handleClose} key={i}>{cat}</MenuItem>)}
+                        { categories.map((cat, i) => {
+                            return (
+                                <Link to={`/category/${cat}`} key={i}>
+                                    <MenuItem onClick={handleClose}>
+                                        {cat}
+                                    </MenuItem>
+                                </Link>
+                            )
+                        }) }
+
 
                     </Menu>
                 </li>
