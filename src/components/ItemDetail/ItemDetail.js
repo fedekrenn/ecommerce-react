@@ -5,11 +5,14 @@ import Swal from 'sweetalert2';
 import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({ prop }) => {
 
-    const { title, price, stock, pic1, pic2, pic3, pic4 , sizes, description } = prop;
+    const { title, price, stock, pic1, pic2, pic3, pic4, sizes, description } = prop;
+
+    const { addProductToCart } = useContext(CartContext)
 
     const [bike, setBike] = useState(pic1)
     const [cantidad, setCantidad] = useState(1)
@@ -61,11 +64,15 @@ const ItemDetail = ({ prop }) => {
             </div>
 
             <div className="buy">
-                
-                {!showButton ? 
+
+                {!showButton ?
                     <ItemCount stock={stock} initial={1} onAdd={onAdd} actualizarCantidad={setCantidad} />
                     :
-                    <Button variant="contained"><Link to="/cart">Finalizar compra</Link></Button> }
+                    <Button
+                        variant="contained"
+                        onClick={() => addProductToCart({prop})}>
+                        <Link to="/cart">Finalizar compra</Link>
+                    </Button>}
             </div>
 
         </div>
