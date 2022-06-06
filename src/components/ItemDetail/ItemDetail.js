@@ -3,6 +3,8 @@ import ItemCount from '../ItemCount/ItemCount';
 import TextField from '@mui/material/TextField';
 import Swal from 'sweetalert2';
 import Autocomplete from '@mui/material/Autocomplete';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const ItemDetail = ({ prop }) => {
@@ -10,14 +12,17 @@ const ItemDetail = ({ prop }) => {
     const { title, price, stock, pic1, pic2, pic3, pic4 , sizes, description } = prop;
 
     const [bike, setBike] = useState(pic1)
+    const [cantidad, setCantidad] = useState(1)
+    const [showButton, setShowButton] = useState(false)
 
-    const onAdd = (count) => {
+    const onAdd = () => {
         Swal.fire({
             title: 'Agregado!',
-            text: `Se agregaron ${count} productos correctamente`,
+            text: `Se agregaron ${cantidad} productos correctamente`,
             icon: 'success',
-            confirmButtonText: 'Seguir comprando'
+            confirmButtonText: 'Aceptar'
         })
+        setShowButton(true)
     }
 
     // Función para seleccionar la imagen principal en el grid
@@ -56,7 +61,11 @@ const ItemDetail = ({ prop }) => {
             </div>
 
             <div className="buy">
-                <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+                
+                {!showButton ? 
+                    <ItemCount stock={stock} initial={1} onAdd={onAdd} actualizarCantidad={setCantidad} />
+                    :
+                    <Button variant="contained"><Link to="/cart">Finalizar compra</Link></Button> }
             </div>
 
         </div>
