@@ -1,4 +1,4 @@
-#root .MuiAppBar-root {
+header.header-main {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

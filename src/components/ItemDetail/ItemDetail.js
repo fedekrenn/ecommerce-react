@@ -1,7 +1,6 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount';
 import TextField from '@mui/material/TextField';
-import Swal from 'sweetalert2';
 import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
@@ -10,22 +9,17 @@ import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({ prop }) => {
 
-    const { title, price, stock, pic1, pic2, pic3, pic4, sizes, description } = prop;
+    const { title, price, stock, pic1, pic2, pic3, pic4, sizes, description, id } = prop;
 
     const { addProductToCart } = useContext(CartContext)
 
     const [bike, setBike] = useState(pic1)
-    const [cantidad, setCantidad] = useState(1)
+    const [quantity, setQuantity] = useState(1)
     const [showButton, setShowButton] = useState(false)
 
     const onAdd = () => {
-        Swal.fire({
-            title: 'Agregado!',
-            text: `Se agregaron ${cantidad} productos correctamente`,
-            icon: 'success',
-            confirmButtonText: 'Aceptar'
-        })
         setShowButton(true)
+        addProductToCart({title, price, pic1, quantity, id})
     }
 
     // Función para seleccionar la imagen principal en el grid
@@ -66,11 +60,9 @@ const ItemDetail = ({ prop }) => {
             <div className="buy">
 
                 {!showButton ?
-                    <ItemCount stock={stock} initial={1} onAdd={onAdd} actualizarCantidad={setCantidad} />
+                    <ItemCount stock={stock} initial={1} onAdd={onAdd} updateQuantity={setQuantity} />
                     :
-                    <Button
-                        variant="contained"
-                        onClick={() => addProductToCart({prop})}>
+                    <Button variant="contained">
                         <Link to="/cart">Finalizar compra</Link>
                     </Button>}
             </div>

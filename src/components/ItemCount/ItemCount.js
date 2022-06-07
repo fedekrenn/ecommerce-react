@@ -3,14 +3,14 @@ import Button from '@mui/material/Button';
 import Swal from 'sweetalert2';
 import { useState } from "react";
 
-const ItemCount = ({ stock, initial, onAdd, actualizarCantidad }) => {
+const ItemCount = ({ stock, initial, onAdd, updateQuantity }) => {
 
     const [count, setCount] = useState(initial);
 
     const addItem = () => {
         if (count < stock) {
             setCount(count + 1)
-            actualizarCantidad(count + 1)
+            updateQuantity(count + 1)
 
         } else {
             Swal.fire({
@@ -25,7 +25,7 @@ const ItemCount = ({ stock, initial, onAdd, actualizarCantidad }) => {
     const removeItem = () => {
         if (count > initial) {
             setCount(count - 1)
-            actualizarCantidad(count -1)
+            updateQuantity(count -1)
         }
     }
 

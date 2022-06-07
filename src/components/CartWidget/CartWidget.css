@@ -2,3 +2,33 @@ header > .icon-cart{
     font-size: 3em;
     margin: 0 20px;
 }
+
+header > .icon-cart:hover{
+    cursor: pointer;
+}
+
+.cart-items-products{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.cart-items-products img{
+    width: 100px;
+}
+
+.cart-items-products__detail{
+    display: flex;
+    flex-direction: column;
+}
+
+#basic-menu ul li{
+    flex-direction: column;
+}
+
+b{
+    font-weight: bold;
+}
