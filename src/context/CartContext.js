@@ -7,12 +7,16 @@ const CartProvider = ({ children }) => {
 
     const [cartListItems, setCartListItems] = useState([])
 
-    const addProductToCart = (product) => {
+    const [totalPrice, setTotalPrice] =  useState(0)
+
+    const addProductToCart = (product) => { 
 
         let isInCart = cartListItems.find(cartItem => cartItem.id === product.id)
 
         if (!isInCart) {
             setCartListItems(cartListItems => [...cartListItems, product])
+            setTotalPrice(totalPrice + product.price * product.quantity)
+
             Swal.fire({
                 title: 'Agregado!',
                 text: `Se agregaron ${product.quantity} productos correctamente`,
@@ -31,7 +35,8 @@ const CartProvider = ({ children }) => {
 
     const data = {
         cartListItems,
-        addProductToCart
+        addProductToCart,
+        totalPrice
     }
 
     return (

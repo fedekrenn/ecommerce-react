@@ -1,0 +1,31 @@
+.title-container{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title-container h3{
+    font-size: 1em;
+    width: 100px;
+    text-align: center;
+    margin: 5% 0;
+}
+
+.cart-container > * {
+    margin: 10px auto;
+    width: 80%;
+}
+
+.cart-items-products{
+    display: flex;
+    justify-content: space-around
+}
+
+.cart-items-products p, .cart-items-products svg{
+    width: 100px;
+}
+
+h4{
+    text-align: center;
+}
