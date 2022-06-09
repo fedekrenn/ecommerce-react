@@ -22,10 +22,10 @@
     justify-content: space-around
 }
 
-.cart-items-products p, .cart-items-products svg{
+.cart-container p, .cart-container svg{
     width: 100px;
 }
 
-h4{
-    text-align: center;
+svg:hover{
+    cursor: pointer;
 }

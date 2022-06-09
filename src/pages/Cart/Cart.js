@@ -2,24 +2,36 @@ import './Cart.css';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
+import KeepBuying from '../KeepBuying/KeepBuying';
 
 
 const Cart = () => {
 
-    const { cartListItems, totalPrice } = useContext(CartContext)
+    const { cartListItems, totalPrice, setCartListItems } = useContext(CartContext)
+
+    // Función para el borrado de productos
+    const deleteProduct = (prod) => {
+        const filteredProduct = cartListItems.filter(cartItem => cartItem !== prod)
+        setCartListItems(filteredProduct)
+    }
 
     return (
         <>
-            <h2>Mi Carrito</h2>
-            <div className='title-container'>
-                <h3>Producto</h3>
-                <h3>Nombre</h3>
-                <h3>Precio x U.</h3>
-                <h3>Cantidad</h3>
-                <h3>Eliminar</h3>
-            </div>
             <div className='cart-container'>
-                {cartListItems.length === 0 && <h4>No hay productos en el carrito</h4>}
+                {cartListItems.length === 0 ? 
+                <KeepBuying />
+                :
+                <>
+                    <h2>Mi Carrito</h2>
+                    <div className='title-container'>
+                        <h3>Producto</h3>
+                        <h3>Nombre</h3>
+                        <h3>Precio x U.</h3>
+                        <h3>Cantidad</h3>
+                        <h3>Eliminar</h3>
+                    </div>
+                </>
+                }
                 {cartListItems.map((product, i) => {
                     return (
                         <div className='cart-items-products' key={i}>
@@ -27,7 +39,7 @@ const Cart = () => {
                             <p>{product.title}</p>
                             <p>${product.price}</p>
                             <p>{product.quantity}</p>
-                            <DeleteForeverIcon />
+                            <DeleteForeverIcon onClick={() => deleteProduct(product)} />
                         </div>
                     )
                 })}

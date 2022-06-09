@@ -31,12 +31,12 @@ const ItemDetail = ({ prop }) => {
 
         <div className="container">
 
-            <img className="primary-pic" alt={`Bicicleta ${title}`} src={`../assets/images/${bike}`}></img>
+            <img className="primary-pic" alt={`Bicicleta ${title}`} src={`../assets/images/${bike}`}/>
 
-            <img className="pic1 pic-detail" onClick={() => selectBike(pic1)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic1}`}></img>
-            <img className="pic2 pic-detail" onClick={() => selectBike(pic2)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic2}`}></img>
-            <img className="pic3 pic-detail" onClick={() => selectBike(pic3)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic3}`}></img>
-            <img className="pic4 pic-detail" onClick={() => selectBike(pic4)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic4}`}></img>
+            <img className="pic1 pic-detail" onClick={() => selectBike(pic1)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic1}`}/>
+            <img className="pic2 pic-detail" onClick={() => selectBike(pic2)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic2}`}/>
+            <img className="pic3 pic-detail" onClick={() => selectBike(pic3)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic3}`}/>
+            <img className="pic4 pic-detail" onClick={() => selectBike(pic4)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic4}`}/>
 
             <div className='title'>
                 <h3>{title}</h3>

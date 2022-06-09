@@ -1,15 +1,25 @@
 import './CartWidget.css'
+import * as React from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
-import * as React from 'react';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import KeepBuying from '../../pages/KeepBuying/KeepBuying';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
-    const { cartListItems } = useContext(CartContext)
+    const { cartListItems, setCartListItems } = useContext(CartContext)
+
+
+    // Función para el borrado de productos
+    const deleteProduct = (prod) => {
+        const filteredProduct = cartListItems.filter(cartItem => cartItem !== prod)
+        setCartListItems(filteredProduct)
+    }
+
 
     // Importación de Material
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -40,21 +50,28 @@ const CartWidget = () => {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem>
-                    {cartListItems.length === 0 && <h4>No hay productos en el carrito</h4>}
+                <div>
                     {cartListItems.map((product, i) => {
                         return (
                             <div className='cart-items-products' key={i}>
-                                <img src={`../assets/images/${product.pic1}`} alt={`Bicicleta ${product.title}`}></img>
+                                <img src={`../assets/images/${product.pic1}`} alt={`Bicicleta ${product.title}`}/>
                                 <div className='cart-items-products__detail'>
                                     <h4>{product.title}</h4>
                                     <p><b>${product.price}</b> - Cantidad: {product.quantity}</p>
                                 </div>
-                                <DeleteForeverIcon />
+                                <DeleteForeverIcon onClick={() => deleteProduct(product)} />
                             </div>
                         )
                     })}
-                </MenuItem>
+                    {cartListItems.length === 0 ?
+                        <KeepBuying />
+                        :
+                        <div className="checkout">
+                            <Button variant="contained">
+                                <Link to="/cart" onClick={handleClose}>Finalizar compra</Link>
+                            </Button>
+                        </div>}
+                </div>
             </Menu>
         </>
     )

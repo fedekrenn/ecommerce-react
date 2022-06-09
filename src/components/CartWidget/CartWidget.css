@@ -8,7 +8,7 @@ header > .icon-cart:hover{
 }
 
 .cart-items-products{
-    width: 400px;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,4 +31,9 @@ header > .icon-cart:hover{
 
 b{
     font-weight: bold;
+}
+
+.checkout button{
+    margin: 20px auto;
+    display: block;
 }
