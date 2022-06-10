@@ -37,7 +37,8 @@ const CartProvider = ({ children }) => {
         cartListItems,
         setCartListItems,
         addProductToCart,
-        totalPrice
+        totalPrice,
+        setTotalPrice
     }
 
     return (

@@ -59,7 +59,7 @@ const CartWidget = () => {
                                     <h4>{product.title}</h4>
                                     <p><b>${product.price}</b> - Cantidad: {product.quantity}</p>
                                 </div>
-                                <DeleteForeverIcon onClick={() => deleteProduct(product)} />
+                                <DeleteForeverIcon className='delete-icon' onClick={() => deleteProduct(product)} />
                             </div>
                         )
                     })}
