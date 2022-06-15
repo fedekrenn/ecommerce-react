@@ -1,8 +1,7 @@
 import './ItemDetailContainer.css';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore'
-// import bikes from '../../utils/bikesMocks';
+import { doc, getDoc } from 'firebase/firestore'
 import ItemDetail from '../ItemDetail/ItemDetail';
 import SpinnerLoader from '../SpinnerLoader/SpinnerLoader';
 import db from '../../utils/firebaseConfig';
@@ -14,27 +13,17 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
 
-    //Llamado a firebase
     const productFilter = async () => {
+        const docRef = doc(db, "bicicletas", id)
+        const docSnapshop = await getDoc(docRef)
+        let product = docSnapshop.data()
+        product.id = parseInt(docSnapshop.id)
 
-        const productSnapshot = await getDocs(collection(db, "bicicletas"));
-        //Se guarda un array de todos los productos y se suma el ID
-        const productList = productSnapshot.docs.map(doc => {
-            let product = doc.data()
-            product.id = parseInt(doc.id)
-            return product
-        });
 
-        // Método para acceder al detalle del producto seleccionado por el usuario
-        const prueba = productList.find((product) => {
-            return product.id === parseInt(id)
-        })
-
-        // Condicional para redirigir a pagina de error si no encuentra el Id de producto
-        if (prueba === undefined) {
+        if (product === undefined) {
             navigate('/*')
         } else {
-            setItem(prueba)
+            setItem(product)
         }
     }
 

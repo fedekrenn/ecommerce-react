@@ -4,10 +4,14 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import bikes from '../../utils/bikesMocks';
+import { collection, getDocs } from 'firebase/firestore'
+import { useState, useEffect } from 'react';
+import db from '../../utils/firebaseConfig';
+
 
 const NavigableMenu = () => {
 
+    const [categories, setCategories] = useState([])
 
     // Menu item de Material UI
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -21,18 +25,30 @@ const NavigableMenu = () => {
         setAnchorEl(null);
     };
 
-    /* "categories" obtiene del mock las categorías, con el map las obtengo y con el reduce las guardo 
-    en valores únicos ya que si no se repiten por cada vez que un producto tiene esa cat*/
+    /* "getCategories" obtiene de la db de firebase las categorías, con el map traigo el dato de todas 
+    las categorias y con el reduce las guardo en valores únicos ya que si no se repiten por cada vez 
+    que un producto tiene esa categoria*/
 
-    const categories = bikes
-        .map(cat => cat.category)
-        .reduce((acc, el) => {
-            if (!acc.find(d => d === el)) {
-                acc.push(el)
-            }
-            return acc
-        }, [])
+    const getCategories = async () => {
 
+        const productSnapshot = await getDocs(collection(db, "bicicletas"));
+        const productCat = productSnapshot.docs
+            .map(cat => cat.data().category)
+            .reduce((acc, el) => {
+                if (!acc.find(d => d === el)) {
+                    acc.push(el)
+                }
+                return acc
+            }, []);
+
+        setCategories(productCat)
+    };
+
+    useEffect(() => {
+
+        getCategories()
+
+    }, [])
 
     return (
         <nav>
@@ -62,7 +78,6 @@ const NavigableMenu = () => {
                         MenuListProps={{
                             'aria-labelledby': 'basic-button',
                         }}>
-
                         {categories.map((cat, i) => {
                             return (
                                 <Link to={`/category/${cat}`} key={i}>

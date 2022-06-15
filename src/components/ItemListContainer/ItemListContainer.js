@@ -3,7 +3,6 @@ import ItemList from '../ItemList/ItemList';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore'
-// import bikes from '../../utils/bikesMocks';
 import SpinnerLoader from '../SpinnerLoader/SpinnerLoader';
 import db from '../../utils/firebaseConfig';
 
@@ -32,7 +31,7 @@ const ItemListContainer = ({ greeting }) => {
     };
 
     useEffect(() => {
-        
+
         getProducts()
 
         return (() => {
