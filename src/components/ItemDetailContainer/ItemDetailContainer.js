@@ -1,9 +1,11 @@
 import './ItemDetailContainer.css';
 import { useState, useEffect } from 'react';
-import bikes from '../../utils/bikesMocks';
-import { useParams , useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore'
+// import bikes from '../../utils/bikesMocks';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import SpinnerLoader from '../SpinnerLoader/SpinnerLoader';
+import db from '../../utils/firebaseConfig';
 
 const ItemDetailContainer = () => {
 
@@ -11,40 +13,41 @@ const ItemDetailContainer = () => {
     const navigate = useNavigate()
 
     const { id } = useParams()
-    
-    const getItem = () => {
-        return new Promise((res, rej) => {
-            setTimeout(() => {
-                res(productFilter)
-            }, 2000)
+
+    //Llamado a firebase
+    const productFilter = async () => {
+
+        const productSnapshot = await getDocs(collection(db, "bicicletas"));
+        //Se guarda un array de todos los productos y se suma el ID
+        const productList = productSnapshot.docs.map(doc => {
+            let product = doc.data()
+            product.id = parseInt(doc.id)
+            return product
+        });
+
+        // Método para acceder al detalle del producto seleccionado por el usuario
+        const prueba = productList.find((product) => {
+            return product.id === parseInt(id)
         })
-    };
+
+        // Condicional para redirigir a pagina de error si no encuentra el Id de producto
+        if (prueba === undefined) {
+            navigate('/*')
+        } else {
+            setItem(prueba)
+        }
+    }
 
     useEffect(() => {
 
-        getItem()
-            .then((res) => {
-                if(res === undefined){
-                    navigate('/*')
-                }else {
-                    setItem(res)
-                }
-            })
-            .catch((rej) => {
-                console.log(rej)
-            })
+        productFilter()
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-
-    const productFilter = bikes.find( (product) => {
-        return product.id === parseInt(id)
-    })
-
     return (
         <>
-            {Object.keys(item).length === 0 ? <SpinnerLoader/> : <ItemDetail prop={item} />}
+            {Object.keys(item).length === 0 ? <SpinnerLoader /> : <ItemDetail prop={item} />}
         </>
     )
 }
