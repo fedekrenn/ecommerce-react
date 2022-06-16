@@ -13,20 +13,21 @@ const ItemDetail = ({ prop }) => {
 
     const { addProductToCart } = useContext(CartContext)
 
+    const [size, setSize] = useState(null)
     const [bike, setBike] = useState(pic1)
     const [quantity, setQuantity] = useState(1)
     const [showButton, setShowButton] = useState(false)
 
     const onAdd = () => {
         setShowButton(true)
-        addProductToCart({title, price, pic1, quantity, id})
+        addProductToCart({title, price, pic1, quantity, id, size})
     }
 
     // Función para seleccionar la imagen principal en el grid
     const selectBike = (img) => {
         setBike(img)
     }
-
+    
     return (
 
         <div className="container">
@@ -53,6 +54,8 @@ const ItemDetail = ({ prop }) => {
                     id="combo-box-demo"
                     options={sizes}
                     sx={{ width: 300 }}
+                    value={size}
+                    onChange={(e, newValue) => setSize(newValue)}
                     renderInput={(params) => <TextField {...params} label="Talle" />}
                 />
             </div>

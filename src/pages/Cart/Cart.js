@@ -42,6 +42,7 @@ const Cart = () => {
                         <div className='title-container'>
                             <h3>Producto</h3>
                             <h3>Nombre</h3>
+                            <h3>Talle</h3>
                             <h3>Precio x U.</h3>
                             <h3>Cantidad</h3>
                             <h3>Eliminar</h3>
@@ -54,6 +55,7 @@ const Cart = () => {
                         <div className='cart-items-products' key={i}>
                             <img src={`../assets/images/${product.pic1}`} alt={`Bicicleta ${product.title}`} />
                             <p>{product.title}</p>
+                            <p>{product.size}</p>
                             <p>${product.price}</p>
                             <p>{product.quantity}</p>
                             <DeleteForeverIcon className='delete-icon' onClick={() => deleteProduct(product)} />

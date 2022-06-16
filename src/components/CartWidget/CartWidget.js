@@ -57,7 +57,7 @@ const CartWidget = () => {
                                 <img src={`../assets/images/${product.pic1}`} alt={`Bicicleta ${product.title}`}/>
                                 <div className='cart-items-products__detail'>
                                     <h4>{product.title}</h4>
-                                    <p><b>${product.price}</b> - Cantidad: {product.quantity}</p>
+                                    <p><b>${product.price}</b> - Cantidad: {product.quantity} - Talle {product.size}</p>
                                 </div>
                                 <DeleteForeverIcon className='delete-icon' onClick={() => deleteProduct(product)} />
                             </div>
