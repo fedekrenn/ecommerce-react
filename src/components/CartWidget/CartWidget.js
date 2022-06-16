@@ -11,13 +11,18 @@ import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
-    const { cartListItems, setCartListItems } = useContext(CartContext)
+    const { cartListItems, setCartListItems, totalPrice, setTotalPrice } = useContext(CartContext)
 
 
     // Función para el borrado de productos
     const deleteProduct = (prod) => {
+        
+        // Filtro los productos distintos al que quiero borrar y los seteo en el context, por lo que eliminé el que selecciona el usuario
         const filteredProduct = cartListItems.filter(cartItem => cartItem !== prod)
         setCartListItems(filteredProduct)
+
+        // Actualizo el precio total a mostrar
+        setTotalPrice(totalPrice - prod.price * prod.quantity)
     }
 
 

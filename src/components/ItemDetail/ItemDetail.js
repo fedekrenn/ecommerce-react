@@ -20,7 +20,7 @@ const ItemDetail = ({ prop }) => {
 
     const onAdd = () => {
         setShowButton(true)
-        addProductToCart({title, price, pic1, quantity, id, size})
+        addProductToCart({title, price, pic1, quantity, id, size, stock})
     }
 
     // Función para seleccionar la imagen principal en el grid
