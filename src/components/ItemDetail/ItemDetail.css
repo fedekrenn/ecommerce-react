@@ -26,7 +26,7 @@
     width: 500px;
 }
 
-.pic-detail{
+.pic-detail {
     margin: auto;
     width: 100%;
     height: 120px;
@@ -36,7 +36,7 @@
     border-radius: 3px;
 }
 
-.pic-detail:hover{
+.pic-detail:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
@@ -58,15 +58,15 @@
 }
 
 
-.container > .title {
+.container>.title {
     justify-self: center;
     align-self: center;
     grid-area: title;
-    font-size: 3em ;
+    font-size: 3em;
     height: fit-content;
 }
 
-.title h3{
+.title h3 {
     font-size: 1em;
 }
 
@@ -84,12 +84,12 @@
     justify-self: center;
 }
 
-.detail span{
+.detail span {
     color: green;
     font-weight: bold;
 }
 
-.detail__description{
+.detail__description {
     font-weight: bold;
     font-size: .8em;
     margin: 25px 0;
@@ -103,23 +103,83 @@
     align-items: center;
 }
 
-.buy button{
+.buy button {
     width: 70%;
 }
 
-.buy .item-list__counter{
+.buy .item-list__counter {
     justify-content: center;
 }
 
-.container .detail{
+.container .detail {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.carousel-item__img{
+.carousel-item__img {
     width: 400px;
     height: 400px;
     object-fit: contain;
 }
 
+/* Responsive */
+
+@media (max-width: 950px) {
+
+    .container {
+        padding: 1%;
+        max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .container {
+        height: auto;
+        grid-template-rows: 1fr 1.5fr .5fr 1.5fr 100px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "title title title title"
+            "primary-pic primary-pic primary-pic primary-pic"
+            "pic1 pic2 pic3 pic4"
+            "detail detail detail detail"
+            "buy buy buy buy";
+    }
+
+    .pic-detail{
+        width: 80%;
+    }
+
+    .detail{
+        text-align: center;
+        margin: 0 3%;
+    }
+
+    .autocomplete{
+        margin: 0 auto;
+    }
+
+    .buy .btn-add-cart{
+        width: 40%;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .buy .btn-add-cart{
+        font-size: .7em;
+    }
+
+    .pic-detail{
+        height: 75px;
+    }
+
+    .detail{
+        margin: 0;
+    }
+
+}

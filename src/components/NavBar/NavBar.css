@@ -4,8 +4,9 @@ header.header-main {
     align-items: center;
 }
 
-.logo-bike-store{
+img.logo-bike-store{
     width: 150px;
+    min-width: 100px;
 }
 
 .header__child{

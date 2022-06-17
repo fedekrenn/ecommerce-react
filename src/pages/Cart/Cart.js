@@ -2,7 +2,7 @@ import './Cart.css';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
-import KeepBuying from '../KeepBuying/KeepBuying';
+import KeepBuying from '../../components/KeepBuying/KeepBuying';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 

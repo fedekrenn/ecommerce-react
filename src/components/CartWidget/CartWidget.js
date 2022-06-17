@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import Menu from '@mui/material/Menu';
-import KeepBuying from '../../pages/KeepBuying/KeepBuying';
+import KeepBuying from '../KeepBuying/KeepBuying'
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
