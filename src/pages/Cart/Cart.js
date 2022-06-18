@@ -6,7 +6,9 @@ import KeepBuying from '../../components/KeepBuying/KeepBuying';
 import Button from '@mui/material/Button';
 import Modal from '../../components/Modal/Modal'
 import TextField from '@mui/material/TextField';
-
+import { addDoc, collection } from 'firebase/firestore';
+import db from '../../utils/firebaseConfig';
+import Swal from 'sweetalert2';
 
 
 const Cart = () => {
@@ -34,10 +36,24 @@ const Cart = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setOrder({...order, buyer: formValue, total: totalPrice})
+        saveData({...order, buyer: formValue, total: totalPrice})
     }
 
     const handleChange = (e) => {
         setFormValue({...formValue, [e.target.name]: e.target.value})
+    }
+
+    const saveData = async (newOrder) =>{
+        const orderFirebase = collection(db, 'ordenes')
+        const orderDoc = await addDoc(orderFirebase, newOrder)
+        Swal.fire({
+            title: 'Compra confirmada',
+            text: `Tu pedido con el ID ${orderDoc.id} se generó correctamente!`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        })
+        deleteAll()
+        setShowModal(false)
     }
 
     //Función para el borrado total del carrito
