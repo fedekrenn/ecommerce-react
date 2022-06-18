@@ -65,3 +65,9 @@ svg:hover{
 .check-out__btn button{
     margin: 10px;
 }
+
+.check-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

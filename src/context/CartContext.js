@@ -6,8 +6,20 @@ const CartContext = createContext()
 const CartProvider = ({ children }) => {
 
     const [cartListItems, setCartListItems] = useState([])
-
     const [totalPrice, setTotalPrice] = useState(0)
+
+
+    // Función para el borrado de productos
+    const deleteProduct = (prod) => {
+
+        // Filtro los productos distintos al que quiero borrar y los seteo en el context, por lo que eliminé el que selecciona el usuario
+        const filteredProduct = cartListItems.filter(cartItem => cartItem !== prod)
+        setCartListItems(filteredProduct)
+
+        // Actualizo el precio total a mostrar
+        setTotalPrice(totalPrice - prod.price * prod.quantity)
+    }
+    
 
     const addProductToCart = (product) => {
 
@@ -68,7 +80,8 @@ const CartProvider = ({ children }) => {
         setCartListItems,
         addProductToCart,
         totalPrice,
-        setTotalPrice
+        setTotalPrice,
+        deleteProduct
     }
 
     return (

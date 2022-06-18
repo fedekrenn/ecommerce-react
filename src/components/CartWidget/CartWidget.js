@@ -11,19 +11,7 @@ import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
-    const { cartListItems, setCartListItems, totalPrice, setTotalPrice } = useContext(CartContext)
-
-
-    // Función para el borrado de productos
-    const deleteProduct = (prod) => {
-        
-        // Filtro los productos distintos al que quiero borrar y los seteo en el context, por lo que eliminé el que selecciona el usuario
-        const filteredProduct = cartListItems.filter(cartItem => cartItem !== prod)
-        setCartListItems(filteredProduct)
-
-        // Actualizo el precio total a mostrar
-        setTotalPrice(totalPrice - prod.price * prod.quantity)
-    }
+    const { cartListItems, deleteProduct } = useContext(CartContext)
 
 
     // Importación de Material
@@ -57,12 +45,13 @@ const CartWidget = () => {
             >
                 <div>
                     {cartListItems.map((product, i) => {
+                        const {title, pic1, price ,size, quantity} = product
                         return (
                             <div className='cart-items-products' key={i}>
-                                <img src={`../assets/images/${product.pic1}`} alt={`Bicicleta ${product.title}`}/>
+                                <img src={`../assets/images/${pic1}`} alt={`Bicicleta ${title}`}/>
                                 <div className='cart-items-products__detail'>
-                                    <h4>{product.title}</h4>
-                                    <p><b>${product.price}</b> - Cantidad: {product.quantity} - Talle {product.size}</p>
+                                    <h4>{title}</h4>
+                                    <p><b>${price}</b> - Cantidad: {quantity} - Talle {size}</p>
                                 </div>
                                 <DeleteForeverIcon className='delete-icon' onClick={() => deleteProduct(product)} />
                             </div>
