@@ -104,7 +104,7 @@ const Cart = () => {
                     </div>
                 </div>
             }
-            <Modal title={'Formulario de contacto'} open={showModal} handleClose={() => setShowModal(false)}>
+            <Modal title={'Finalizar mi compra'} open={showModal} handleClose={() => setShowModal(false)}>
                 <form className='check-form' onSubmit={handleSubmit}>
                     <TextField
                         id="standard-basic"
