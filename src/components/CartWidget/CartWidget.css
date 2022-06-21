@@ -1,10 +1,13 @@
-header > .icon-cart{
+header .icon-cart{
     font-size: 3em;
-    margin: 0 20px;
 }
 
-header > .icon-cart:hover{
+header .icon-cart:hover{
     cursor: pointer;
+}
+
+.cart-badge{
+    margin: 20px;
 }
 
 .cart-items-products{

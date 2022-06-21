@@ -8,6 +8,7 @@ import Menu from '@mui/material/Menu';
 import KeepBuying from '../KeepBuying/KeepBuying'
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import Badge from '@mui/material/Badge';
 
 const CartWidget = () => {
 
@@ -26,14 +27,24 @@ const CartWidget = () => {
 
     return (
         <>
-            <ShoppingCartIcon
-                className='icon-cart'
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-            />
+            <Badge 
+                badgeContent={cartListItems.length} 
+                className="cart-badge"
+                color="error"
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                  }}
+            >
+                <ShoppingCartIcon
+                    className='icon-cart'
+                    id="basic-button"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                />
+            </Badge>
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
@@ -45,10 +56,10 @@ const CartWidget = () => {
             >
                 <div>
                     {cartListItems.map((product, i) => {
-                        const {title, pic1, price ,size, quantity} = product
+                        const { title, pic1, price, size, quantity } = product
                         return (
                             <div className='cart-items-products' key={i}>
-                                <img src={`../assets/images/${pic1}`} alt={`Bicicleta ${title}`}/>
+                                <img src={`../assets/images/${pic1}`} alt={`Bicicleta ${title}`} />
                                 <div className='cart-items-products__detail'>
                                     <h4>{title}</h4>
                                     <p><b>${price}</b> - Cantidad: {quantity} - Talle {size}</p>
