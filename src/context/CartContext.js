@@ -5,9 +5,8 @@ const CartContext = createContext()
 
 const CartProvider = ({ children }) => {
 
-    const [cartListItems, setCartListItems] = useState([])
-    const [totalPrice, setTotalPrice] = useState(0)
-
+    const [cartListItems, setCartListItems] = useState(JSON.parse(localStorage.getItem('products')) || [])
+    const [totalPrice, setTotalPrice] = useState(JSON.parse(localStorage.getItem('total-price')) || 0)
 
     // Función para el borrado de productos
     const deleteProduct = (prod) => {
@@ -15,11 +14,13 @@ const CartProvider = ({ children }) => {
         // Filtro los productos distintos al que quiero borrar y los seteo en el context, por lo que eliminé el que selecciona el usuario
         const filteredProduct = cartListItems.filter(cartItem => cartItem !== prod)
         setCartListItems(filteredProduct)
+        localStorage.setItem('products', JSON.stringify(filteredProduct))
 
         // Actualizo el precio total a mostrar
         setTotalPrice(totalPrice - prod.price * prod.quantity)
+        localStorage.setItem('total-price', totalPrice - prod.price * prod.quantity)
     }
-    
+
 
     const addProductToCart = (product) => {
 
@@ -29,6 +30,8 @@ const CartProvider = ({ children }) => {
         if (!isInCart) {
             setCartListItems(cartListItems => [...cartListItems, product])
             setTotalPrice(totalPrice + product.price * product.quantity)
+            localStorage.setItem('products', JSON.stringify([...cartListItems, product]))
+            localStorage.setItem('total-price', totalPrice + product.price * product.quantity)
 
             Swal.fire({
                 title: 'Agregado!',
@@ -54,8 +57,11 @@ const CartProvider = ({ children }) => {
                 const filteredProduct = cartListItems.filter(cartItem => cartItem.id !== product.id)
                 setCartListItems(filteredProduct)
                 setCartListItems(filteredProduct => [...filteredProduct, refreshQuantity])
+                localStorage.setItem('products', JSON.stringify([...filteredProduct, refreshQuantity]))
 
                 setTotalPrice(totalPrice + product.price * product.quantity)
+                localStorage.setItem('total-price', totalPrice + product.price * product.quantity)
+
 
                 Swal.fire({
                     title: 'Atención!',
