@@ -59,7 +59,9 @@ const Cart = () => {
     //Función para el borrado total del carrito
     const deleteAll = () => {
         setCartListItems([]);
+        localStorage.setItem('products', JSON.stringify([]))
         setTotalPrice(0)
+        localStorage.setItem('total-price', 0)
     }
 
     return (

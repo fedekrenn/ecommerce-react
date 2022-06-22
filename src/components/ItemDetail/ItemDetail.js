@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import CartContext from '../../context/CartContext';
+import Swal from 'sweetalert2';
 
 const ItemDetail = ({ prop }) => {
 
@@ -19,25 +20,34 @@ const ItemDetail = ({ prop }) => {
     const [showButton, setShowButton] = useState(false)
 
     const onAdd = () => {
-        setShowButton(true)
-        addProductToCart({title, price, pic1, quantity, id, size, stock})
+        if (size !== null) {
+            setShowButton(true)
+            addProductToCart({ title, price, pic1, quantity, id, size, stock })
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: 'Tienes que seleccionar el talle de bicicleta que deseas',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            })
+        }
     }
 
     // Función para seleccionar la imagen principal en el grid
     const selectBike = (img) => {
         setBike(img)
     }
-    
+
     return (
 
         <div className="container">
 
-            <img className="primary-pic" alt={`Bicicleta ${title}`} src={`../assets/images/${bike}`}/>
+            <img className="primary-pic" alt={`Bicicleta ${title}`} src={`../assets/images/${bike}`} />
 
-            <img className="pic1 pic-detail" onClick={() => selectBike(pic1)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic1}`}/>
-            <img className="pic2 pic-detail" onClick={() => selectBike(pic2)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic2}`}/>
-            <img className="pic3 pic-detail" onClick={() => selectBike(pic3)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic3}`}/>
-            <img className="pic4 pic-detail" onClick={() => selectBike(pic4)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic4}`}/>
+            <img className="pic1 pic-detail" onClick={() => selectBike(pic1)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic1}`} />
+            <img className="pic2 pic-detail" onClick={() => selectBike(pic2)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic2}`} />
+            <img className="pic3 pic-detail" onClick={() => selectBike(pic3)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic3}`} />
+            <img className="pic4 pic-detail" onClick={() => selectBike(pic4)} alt={`Bicicleta ${title}`} src={`../assets/images/${pic4}`} />
 
             <div className='title'>
                 <h3>{title}</h3>
