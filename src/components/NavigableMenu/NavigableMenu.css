@@ -1,5 +1,17 @@
-ul.nav__ul{
+.nav__container ul{
     display: flex;
+}
+
+ul.maxim-nav{
+    flex-direction: row;
+}
+
+ul.minim-nav{
+    flex-direction: column;
+}
+
+ul.minim-nav button{
+   margin: 0;
 }
 
 ul li{
@@ -13,3 +25,4 @@ ul li{
     text-transform: none;
     font-size: inherit;
 }
+

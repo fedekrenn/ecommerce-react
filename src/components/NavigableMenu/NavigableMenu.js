@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import db from '../../utils/firebaseConfig';
 
 
-const NavigableMenu = () => {
+const NavigableMenu = ({classProp}) => {
 
     const [categories, setCategories] = useState([])
 
@@ -51,11 +51,17 @@ const NavigableMenu = () => {
     }, [])
 
     return (
-        <nav>
-            <ul className='nav__ul'>
+        <nav className='nav__container'>
+            <ul className={classProp}>
                 <li>
                     <Link to={"/"}>
-                        <Button variant="text" className='nav-btn'>Home</Button>
+                        <Button
+                            variant="text"
+                            className='nav-btn'
+                            sx={{ my: 2, color: { xs: '#1976D2', md: 'white'}}}
+                        >
+                            Home
+                        </Button>
                     </Link>
                 </li>
                 <li>
@@ -67,9 +73,11 @@ const NavigableMenu = () => {
                         variant="text"
                         disableRipple
                         aria-expanded={open ? 'true' : undefined}
+                        sx={{ my: 2, color: { xs: '#1976D2', md: 'white'}}}
                         onClick={handleClick}
-                    >Categorías</Button>
-
+                    >
+                        Categorías
+                    </Button>
                     <Menu
                         id="basic-menu"
                         anchorEl={anchorEl}
@@ -87,12 +95,16 @@ const NavigableMenu = () => {
                                 </Link>
                             )
                         })}
-
-
                     </Menu>
                 </li>
                 <li>
-                    <Button variant="text" className='nav-btn'>Contactarnos</Button>
+                    <Button
+                        variant="text"
+                        className='nav-btn'
+                        sx={{ my: 2, color: { xs: '#1976D2', md: 'white'}}}
+                    >
+                        Contactarnos
+                    </Button>
                 </li>
             </ul>
         </nav>

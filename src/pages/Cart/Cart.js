@@ -20,6 +20,7 @@ const Cart = () => {
         phone: '',
         mail: ''
     })
+    
     const [order, setOrder] = useState({
         buyer: {},
         items: cartListItems.map(item => {
