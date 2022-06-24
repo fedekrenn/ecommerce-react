@@ -14,3 +14,9 @@ img.logo-bike-store{
     align-items: center;
 }
 
+@media (max-width: 340px) {
+    img.logo-bike-store{
+        width: 100px;
+    }
+}
+

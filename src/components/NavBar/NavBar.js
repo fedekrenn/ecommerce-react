@@ -26,7 +26,7 @@ export default function ButtonAppBar() {
 
     return (
 
-        <AppBar position="static">
+        <AppBar position="static" color='primary'>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>

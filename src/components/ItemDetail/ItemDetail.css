@@ -11,7 +11,7 @@
         "pic3 primary-pic detail"
         "pic4 primary-pic buy";
     width: 90%;
-    min-height: 90vh;
+    max-height: 90vh;
     margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
@@ -128,8 +128,9 @@
 @media (max-width: 950px) {
 
     .container {
+        margin: 10% auto;
         padding: 1%;
-        max-width: 100%;
+        width: 90%;
     }
 
 }
@@ -139,6 +140,7 @@
 
     .container {
         height: auto;
+        max-height: none;
         grid-template-rows: 1fr 1.5fr .5fr 1.5fr 100px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas:
@@ -179,7 +181,11 @@
     }
 
     .detail{
-        margin: 0;
+        margin: 10% auto;
+    }
+
+    .buy .btn-add-cart{
+        width: 80%;
     }
 
 }

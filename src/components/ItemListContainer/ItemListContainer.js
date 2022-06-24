@@ -43,12 +43,15 @@ const ItemListContainer = ({ greeting }) => {
     }, [category])
 
     return (
-        <section>
-            <h2>{greeting}</h2>
-            <div className="item-list__container">
-                {loading ? <SpinnerLoader /> : <ItemList items={products} />}
-            </div>
-        </section>
+        <>
+            <h1>Bike Store - Tienda de ciclismo</h1>
+            <section>
+                <h2>{greeting}</h2>
+                <div className="item-list__container">
+                    {loading ? <SpinnerLoader /> : <ItemList items={products} />}
+                </div>
+            </section>
+        </>
     );
 }
 

@@ -72,11 +72,11 @@ const Cart = () => {
                     <KeepBuying />
                     :
                     <>
-                        <h2>Mi Carrito</h2>
+                        <h1>Terminar mi compra</h1>
                         <div className='title-container'>
-                            <h3>Producto</h3>
+                            <h3 className='hide-section'>Producto</h3>
                             <h3>Nombre</h3>
-                            <h3>Talle</h3>
+                            <h3 className='hide-section'>Talle</h3>
                             <h3>Precio x U.</h3>
                             <h3>Cantidad</h3>
                             <h3>Eliminar</h3>
@@ -88,9 +88,9 @@ const Cart = () => {
                     const { title, pic1, price, size, quantity } = product
                     return (
                         <div className='cart-items-products' key={i}>
-                            <img src={`../assets/images/${pic1}`} alt={`Bicicleta ${title}`} />
+                            <img src={`../assets/images/${pic1}`} alt={`Bicicleta ${title}`} className='hide-section' />
                             <p>{title}</p>
-                            <p>{size}</p>
+                            <p className='hide-section'>{size}</p>
                             <p>${price}</p>
                             <p>{quantity}</p>
                             <DeleteForeverIcon className='delete-icon' onClick={() => deleteProduct(product)} />
@@ -100,7 +100,7 @@ const Cart = () => {
             </div>
             {totalPrice > 0 &&
                 <div className='check-out'>
-                    <p className='check-out__total-price'>El total de tu compra es ${totalPrice}</p>
+                    <p className='check-out__total-price'>El total de tu carrito es ${totalPrice}</p>
                     <div className='check-out__btn'>
                         <Button variant="contained" onClick={() => setShowModal(true)}>Finalizar compra</Button>
                         <Button variant="outlined" onClick={deleteAll}>Eliminar todo</Button>

@@ -39,7 +39,8 @@ const ItemDetail = ({ prop }) => {
     }
 
     return (
-
+        <>
+            <h1>Detalle de producto</h1>
         <div className="container">
 
             <img className="primary-pic" alt={`Bicicleta ${title}`} src={`../assets/images/${bike}`} />
@@ -79,9 +80,8 @@ const ItemDetail = ({ prop }) => {
                         <Link to="/cart">Finalizar compra</Link>
                     </Button>}
             </div>
-
         </div>
-
+        </>
     )
 }
 

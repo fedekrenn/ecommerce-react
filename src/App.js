@@ -13,7 +13,6 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <main>
-          <h1>Bike Store - Tienda de ciclismo</h1>
           <Routes>
             <Route path='/' element={<ItemListContainer greeting={'Productos Recomendados'} />} />
             <Route path='/cart' element={<Cart />} />
