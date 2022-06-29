@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './pages/Cart/Cart';
 import NotFound from './pages/NotFound'
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
+        <Footer />
       </BrowserRouter >
     </CartProvider>
   );

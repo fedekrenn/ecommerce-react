@@ -69,7 +69,7 @@ const CartWidget = () => {
                         )
                     })}
                     {cartListItems.length === 0 ?
-                        <KeepBuying />
+                        <KeepBuying sendFn={handleClose}/>
                         :
                         <div className="checkout">
                             <Button variant="contained">
