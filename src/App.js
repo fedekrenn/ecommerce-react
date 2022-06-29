@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './pages/Cart/Cart';
 import NotFound from './pages/NotFound'
+import Home from './pages/Home/Home';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <NavBar />
         <main>
           <Routes>
-            <Route path='/' element={<ItemListContainer greeting={'Productos Recomendados'} />} />
+            <Route path='/' element={<Home/>} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/category/:category' element={<ItemListContainer />} />
             <Route path='/item/:id' element={<ItemDetailContainer />} />

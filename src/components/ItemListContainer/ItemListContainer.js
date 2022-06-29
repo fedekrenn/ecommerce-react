@@ -43,10 +43,11 @@ const ItemListContainer = ({ greeting }) => {
     }, [category])
 
     return (
-        <>
+        <>  
             <h1>Bike Store - Tienda de ciclismo</h1>
             <section>
-                <h2>{greeting}</h2>
+                {greeting && <h2>{greeting}</h2>}
+                {category !== undefined && <h2>{`Productos de la categoría ${category}`}</h2>}
                 <div className="item-list__container">
                     {loading ? <SpinnerLoader /> : <ItemList items={products} />}
                 </div>
