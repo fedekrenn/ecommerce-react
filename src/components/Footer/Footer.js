@@ -18,10 +18,10 @@ const Footer = () => {
             <div className="footer__contact">
                 <h3 className="footer-title">Diseñado por Federico Krenn</h3>
                 <ul className='contact__icons'>
-                    <li><a href='https://www.facebook.com/kempeess'><FacebookOutlinedIcon/></a></li>
-                    <li><a href='mailto:fedekrenn@gmail.com'><EmailIcon/></a></li>
-                    <li><a href='https://github.com/fedekrenn'><GitHubIcon/></a></li>
-                    <li><a href='https://www.linkedin.com/in/fkrenn/'><LinkedInIcon/></a></li>
+                    <li><a href='https://www.facebook.com/kempeess' target='_blank' rel='noreferrer'><FacebookOutlinedIcon/></a></li>
+                    <li><a href='mailto:fedekrenn@gmail.com' target='_blank' rel='noreferrer'><EmailIcon/></a></li>
+                    <li><a href='https://github.com/fedekrenn' target='_blank' rel='noreferrer'><GitHubIcon/></a></li>
+                    <li><a href='https://www.linkedin.com/in/fkrenn/' target='_blank' rel='noreferrer'><LinkedInIcon/></a></li>
                 </ul>
             </div>
             <div className="footer__extra-data">
