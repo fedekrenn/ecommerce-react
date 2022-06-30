@@ -49,7 +49,8 @@ const Cart = () => {
         const orderDoc = await addDoc(orderFirebase, newOrder)
         Swal.fire({
             title: 'Compra confirmada',
-            text: `Tu pedido con el ID ${orderDoc.id} se generó correctamente!`,
+            text: 'Tu pedido fue generado correctamente! En breve nos contactaremos para gestionar el pago.',
+            footer: `ID de la operación: ${orderDoc.id}`,
             icon: 'success',
             confirmButtonText: 'Aceptar'
         })
@@ -110,7 +111,7 @@ const Cart = () => {
             <Modal title={'Finalizar mi compra'} open={showModal} handleClose={() => setShowModal(false)}>
                 <form className='check-form' onSubmit={handleSubmit}>
                     <TextField
-                        id="standard-basic"
+                        id="complete-name"
                         name="name"
                         label="Tu nombre completo"
                         variant="standard"
@@ -120,7 +121,7 @@ const Cart = () => {
                         required
                     />
                     <TextField
-                        id="standard-basic"
+                        id="phone"
                         name="phone"
                         label="Teléfono"
                         variant="standard"
@@ -130,7 +131,7 @@ const Cart = () => {
                         required
                     />
                     <TextField
-                        id="standard-basic"
+                        id="email"
                         name="mail"
                         label="Email"
                         variant="standard"

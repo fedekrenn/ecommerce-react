@@ -103,7 +103,7 @@ const NavigableMenu = ({classProp}) => {
                         className='nav-btn'
                         sx={{ my: 2, color: { xs: '#1976D2', md: 'white'}}}
                     >
-                        Contactarnos
+                        <Link to={"/contacto"}>Contactarnos</Link>
                     </Button>
                 </li>
             </ul>

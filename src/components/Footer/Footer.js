@@ -1,7 +1,7 @@
 import './Footer.css'
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
@@ -18,10 +18,10 @@ const Footer = () => {
             <div className="footer__contact">
                 <h3 className="footer-title">Diseñado por Federico Krenn</h3>
                 <ul className='contact__icons'>
-                    <li><FacebookOutlinedIcon /></li>
-                    <li><TwitterIcon /></li>
-                    <li><InstagramIcon /></li>
-                    <li><LinkedInIcon /></li>
+                    <li><a href='https://www.facebook.com/kempeess'><FacebookOutlinedIcon/></a></li>
+                    <li><a href='mailto:fedekrenn@gmail.com'><EmailIcon/></a></li>
+                    <li><a href='https://github.com/fedekrenn'><GitHubIcon/></a></li>
+                    <li><a href='https://www.linkedin.com/in/fkrenn/'><LinkedInIcon/></a></li>
                 </ul>
             </div>
             <div className="footer__extra-data">

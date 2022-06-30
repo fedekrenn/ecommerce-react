@@ -14,6 +14,13 @@ header img.logo-bike-store{
     align-items: center;
 }
 
+header .nav-btn:hover{
+    color: #80d8f3;
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+
 @media (max-width: 340px) {
     img.logo-bike-store{
         width: 100px;
