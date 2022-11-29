@@ -29,9 +29,9 @@ Bienvenidos al proyecto final de cursada de React en Coderhouse. Realicé un eco
 <br><br><br>
 
 <h2> 🙋‍♂️ Hola, Soy Federico Krenn</h2>
-:nerd_face: Me encuentro cursando la carrera de fullstrack developer en Coderhouse 
+:nerd_face: Me encuentro cursando la carrera de fullstack developer en Coderhouse 
 <br>
-🌱 Actualmente estoy cursando React
+🌱 Actualmente estoy cursando Backend
 <br></br>
 📫 Conectemos en Linkedin: https://www.linkedin.com/in/fkrenn/
 
