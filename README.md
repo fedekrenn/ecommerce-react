@@ -1,13 +1,7 @@
 # 🚴 Bike Store | Tienda de ciclismo
 
-
-
-Bienvenidos al proyecto final de cursada de React en Coderhouse. Realicé un ecommerce de bicicletas tanto de ruta como de MTB utilizando la librería React. También se utilizaron:
-
-- Material UI
-- React Bootstrap
-- Sweetalert2
-- Firebase/Firestore para la DB
+## 📝 Detalle
+Ecommerce realizado en React conectado a una DB en Firebase/Firestore. La tienda está dedicada a la venta de bicicletas, donde podés ver en la home el listado de las mismas, entrar a su detalle, filtrar por categoría y agregar al carrito (con control de no sobrepasar el stock). En el carrito se puede modificar la cantidad de productos, eliminarlos y finalizar la compra (Al finalizar se despliega un modal con un formulario para completar los datos del usuario), se genera una orden con un ID único. Se controla en Firebase que se haya generado dicha orden.
 
 ## Funcionamiento:
 
@@ -26,12 +20,20 @@ Bienvenidos al proyecto final de cursada de React en Coderhouse. Realicé un eco
 ### Finalización de compra, con despliege modal con formulario. Luego se le informa al usuario el ID y controlamos en Firebase que se haya generado la orden:
 
 ![cuatro](https://user-images.githubusercontent.com/90353038/176954429-00eb74fd-fcb5-4adb-b6f6-baadaab93718.gif)
-<br><br><br>
 
-<h2> 🙋‍♂️ Hola, Soy Federico Krenn</h2>
-:nerd_face: Me encuentro cursando la carrera de fullstack developer en Coderhouse 
+## 🚀 Tecnologías utilizadas
+- Material UI
+- React Bootstrap
+- React Router Dom
+- Sweetalert2
+- Firebase/Firestore para la DB
+
 <br>
-🌱 Actualmente estoy cursando Backend
-<br></br>
+
+## 🙋‍♂️ Hola, Soy Federico Krenn
+:nerd_face: Desarrollador web Fullstack
+<br>
+👨‍🎓 Realizando la Tecnicatura en Desarrollo Web en ISPC y Tecnicatura en Software Libre en la UNL
+<br>
 📫 Conectemos en Linkedin: https://www.linkedin.com/in/fkrenn/
 
